@@ -1,0 +1,102 @@
+<?php 
+
+	session_start();
+
+	if (isset($_SESSION['usuario'])) {
+		header("location: bienvenida.php");
+	}
+
+
+
+ ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>TECH-LFB</title>
+</head>
+<body>
+ 	<div class="container-form register"> 
+ 		<div class="information">
+ 			<div class="info-childs">
+ 				<h2>Bienvenido</h2>
+ 				<p>Para acceder al portal de nuestra institución, por favor Inicia sesión con tus datos</p>
+ 				<input type="button" value="Iniciar Sesión" id="sign-in">
+			</div>
+		</div>
+		<div class="form-information">
+			<div class="form-information-childs">
+				<h2>Crea Una Cuenta</h2>
+				<form action="php/registro_usuario_be.php" method="POST" class="form">
+					<label for="name">
+						<i class='bx bxs-user-circle'></i>
+						<input type="text" id="nombre_completo" placeholder="Nombre Completo" name="nombre_completo">
+					</label>
+					<label for="email">
+						<i class='bx bxs-envelope'></i>
+						<input type="email" id="email" placeholder="Correo Electrónico" name="correo">
+					</label>
+					<label for="password">
+						<i class='bx bxs-lock-alt'></i>
+						<input type="password" id="password" placeholder="Contraseña" name="password">
+					</label>
+					<input type="submit" value="Registrarse" class="btn-register">
+				</form>
+			</div>
+		</div>
+	</div>	
+
+
+
+
+
+
+
+
+	 	
+
+
+
+
+	 	<div class="container-form login hide"> 
+ 		<div class="information">
+ 			<div class="info-childs">
+ 				<h2>¡¡Bienvenido Nuevamente!!</h2>
+ 				<p>Si Aún no tienes cuenta, por favor... ¡Registrate con tus datos!</p>
+ 				<input type="button" value="Registrarse" id="sign-up">
+			</div>
+		</div>
+		<div class="form-information">
+			<div class="form-information-childs">
+				<h2>Iniciar Sesión</h2>
+				<form action="php/login_usuario_be.php" method="POST" class="form">
+					<label for="email">
+						<i class='bx bxs-envelope'></i>
+						<input type="email" id="email" placeholder="Correo Electrónico" name="correo">
+					</label>
+					<label for="password">
+						<i class='bx bxs-lock-alt'></i>
+						<input type="password" id="password" placeholder="Contraseña" name="password">
+					</label>
+					<input type="submit" value="Iniciar Sesión" class="btn-login">
+				</form>
+			</div>
+		</div>
+	</div>	
+	<script src="script.js"></script>	
+</body>
+<footer>
+    <p>Nombre: Misael Hernández</p>
+    <p>Cédula: V-31.938.424</p>
+    <p>Institución: Universidad Politecnica Territorial del Estado Bolívar</p>
+    <p>PNF: Ingeniería Informática, T2-Sección 8</p>
+</footer>
+</html>
+
